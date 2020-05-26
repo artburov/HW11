@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class ClockView: UIView {
     
     var isSetuped = false
@@ -16,16 +17,45 @@ class ClockView: UIView {
     var markerLength: CGFloat = 12
     var markerColor = UIColor.blue
     
-    var hourLineSize: CGFloat = 6
-    var hourLineOffset: CGFloat = 40
-    var hourLineColor = UIColor.green
+    @IBInspectable var hourLineSize: CGFloat = 8 {
+        didSet {layoutIfNeeded()}
+    }
+    
+    var hourLineOffset: CGFloat = 50
+    
+    @IBInspectable var hourLineColor: UIColor = UIColor.green {
+        didSet {hourLine.backgroundColor = hourLineColor }
+    }
     
     var centerRoundColor = UIColor.green
     
     //Hours in integer value with Observer
-    var hours: CGFloat = 9 {
+    @IBInspectable var hours: CGFloat = 21 {
         didSet {
-            updateHours()
+            //            updateHours()
+            layoutIfNeeded()
+        }
+    }
+    
+    var minuteLineSize: CGFloat = 4
+    var minuteLineOffset: CGFloat = 35
+    var minuteLineColor = UIColor.green
+    
+    //Minutes in integer value with Observer
+    var minutes: CGFloat = 27 {
+        didSet {
+            updateMinutes()
+        }
+    }
+    
+    var secondLineSize: CGFloat = 1
+    var secondLineOffset: CGFloat = 35
+    var secondLineColor = UIColor.red
+    
+    //Second in integer value with Observer
+    var second: CGFloat = 52 {
+        didSet {
+            updateSecond()
         }
     }
     
@@ -38,6 +68,12 @@ class ClockView: UIView {
     //Hour line
     private let hourLine = UIView()
     
+    //Minute Line
+    private let minuteLine = UIView()
+    
+    //Second Line
+    private let secondLine = UIView()
+    
     //Center dot
     private let centerRound = UIView()
     
@@ -47,6 +83,12 @@ class ClockView: UIView {
         
         //Added rotation angle for hour line, ex. x0 y0 is a point at the left top corner
         hourLine.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
+        
+        //Added rotation angle for minute line
+        minuteLine.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
+        
+        //Added rotation angle for second line
+        secondLine.layer.anchorPoint = CGPoint(x: 0.5, y: 1)        
         
         //Width and Height constants
         let w = frame.size.width
@@ -62,6 +104,16 @@ class ClockView: UIView {
         hourLine.frame = CGRect(x: w / 2, y: hourLineOffset, width: hourLineSize, height: h / 2 - hourLineOffset)
         hourLine.backgroundColor = hourLineColor
         updateHours()
+        
+        //Minute's line settings
+        minuteLine.frame = CGRect(x: w / 2, y: minuteLineOffset, width: minuteLineSize, height: h / 2 - minuteLineOffset)
+        minuteLine.backgroundColor = minuteLineColor
+        updateMinutes()
+        
+        //Second's line settings
+        secondLine.frame = CGRect(x: w / 2, y: secondLineOffset, width: secondLineSize, height: h / 2 - secondLineOffset)
+        secondLine.backgroundColor = secondLineColor
+        updateSecond()
         
         //Center dot settings
         centerRound.frame = CGRect(x: w / 2 - 8, y: h / 2 - 8, width: 16, height: 16)
@@ -81,14 +133,25 @@ class ClockView: UIView {
         isSetuped = true
         
         //Added all UIViews to subview in loop
-        for v in [topMarker, leftMarker, rightMarker, bottomMarker, hourLine, centerRound] {
+        for v in [topMarker, leftMarker, rightMarker, bottomMarker, hourLine, minuteLine, secondLine, centerRound] {
             addSubview(v)
         }
     }
     
     //Func to calculate angle for hour's line
     func updateHours () {
+        guard hours <= 24 else {return}
         let angle = CGFloat.pi * 2 * (hours / CGFloat(12))
         hourLine.transform = CGAffineTransform(rotationAngle: angle)
+    }
+    
+    func updateMinutes() {
+        let angle = CGFloat.pi * 2 * (minutes / CGFloat(60))
+        minuteLine.transform = CGAffineTransform(rotationAngle: angle)
+    }
+    
+    func updateSecond() {
+        let angle = CGFloat.pi * 2 * (second / CGFloat(60))
+        secondLine.transform = CGAffineTransform(rotationAngle: angle)
     }
 }
