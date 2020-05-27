@@ -39,9 +39,17 @@ class ClockView: UIView {
         }
     }
     
-    var minuteLineSize: CGFloat = 4
-    var minuteLineOffset: CGFloat = 35
-    var minuteLineColor = UIColor.green
+    @IBInspectable var minuteLineSize: CGFloat = 4 {
+        didSet {layoutIfNeeded()}
+    }
+    
+    @IBInspectable var minuteLineOffset: CGFloat = 35 {
+        didSet {layoutIfNeeded()}
+    }
+    
+    @IBInspectable var minuteLineColor : UIColor = UIColor.green {
+        didSet {minuteLine.backgroundColor = minuteLineColor }
+    }
     
     //Minutes in integer value with Observer
     var minutes: CGFloat = 27 {
@@ -50,9 +58,17 @@ class ClockView: UIView {
         }
     }
     
-    var secondLineSize: CGFloat = 1
-    var secondLineOffset: CGFloat = 35
-    var secondLineColor = UIColor.red
+    @IBInspectable var secondLineSize: CGFloat = 1 {
+        didSet {layoutIfNeeded()}
+    }
+    
+    @IBInspectable var secondLineOffset: CGFloat = 35 {
+        didSet {layoutIfNeeded()}
+    }
+    
+    @IBInspectable var secondLineColor: UIColor = UIColor.red {
+        didSet {secondLine.backgroundColor = secondLineColor}
+    }
     
     //Second in integer value with Observer
     var second: CGFloat = 52 {
@@ -79,7 +95,7 @@ class ClockView: UIView {
     //Center dot
     private let centerRound = UIView()
     
-
+    
     // Visualize changes in storyboard
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
@@ -89,7 +105,7 @@ class ClockView: UIView {
     //Func to draw all in layout
     // override func layoutSubviews() {
     // super.layoutSubviews()
-        
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
@@ -97,7 +113,7 @@ class ClockView: UIView {
     
     //Setting function for all elements
     func setup() {
-    
+        
         //Added rotation angle for hour line, ex. x0 y0 is a point at the left top corner
         hourLine.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
         
