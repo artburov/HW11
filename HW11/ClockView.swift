@@ -21,7 +21,9 @@ class ClockView: UIView {
         didSet {layoutIfNeeded()}
     }
     
-    var hourLineOffset: CGFloat = 50
+    @IBInspectable var hourLineOffset: CGFloat = 50 {
+        didSet {layoutSubviews()}
+    }
     
     @IBInspectable var hourLineColor: UIColor = UIColor.green {
         didSet {hourLine.backgroundColor = hourLineColor }
@@ -77,10 +79,25 @@ class ClockView: UIView {
     //Center dot
     private let centerRound = UIView()
     
+
+    // Visualize changes in storyboard
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setup()
+    }
+    
     //Func to draw all in layout
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    // override func layoutSubviews() {
+    // super.layoutSubviews()
         
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setup()
+    }
+    
+    //Setting function for all elements
+    func setup() {
+    
         //Added rotation angle for hour line, ex. x0 y0 is a point at the left top corner
         hourLine.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
         
@@ -145,11 +162,13 @@ class ClockView: UIView {
         hourLine.transform = CGAffineTransform(rotationAngle: angle)
     }
     
+    //Func to calculate angle for minute's line
     func updateMinutes() {
         let angle = CGFloat.pi * 2 * (minutes / CGFloat(60))
         minuteLine.transform = CGAffineTransform(rotationAngle: angle)
     }
     
+    //Func to calculate angle for second's line
     func updateSecond() {
         let angle = CGFloat.pi * 2 * (second / CGFloat(60))
         secondLine.transform = CGAffineTransform(rotationAngle: angle)
