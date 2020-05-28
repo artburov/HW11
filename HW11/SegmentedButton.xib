@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16095" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16084.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SegmentedButton" customModule="HW11" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMH-0K-RjB">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="EFF-pA-L0z"/>
+                        <constraint firstAttribute="width" constant="100" id="obK-xY-f9h"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7I-0s-M3K">
+                    <rect key="frame" x="100" y="0.0" width="100" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="XTD-NJ-l9o"/>
+                        <constraint firstAttribute="width" constant="100" id="urI-p4-WMO"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="t7I-0s-M3K" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6j4-kJ-vYm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="t7I-0s-M3K" secondAttribute="bottom" id="CNk-R4-qbF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="VMH-0K-RjB" secondAttribute="bottom" id="KKv-pL-Arn"/>
+                <constraint firstItem="VMH-0K-RjB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Rpe-Su-oTf"/>
+                <constraint firstItem="t7I-0s-M3K" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="bVx-0D-uz6"/>
+                <constraint firstItem="VMH-0K-RjB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="p4i-l4-Vry"/>
+                <constraint firstAttribute="trailing" secondItem="t7I-0s-M3K" secondAttribute="trailing" id="tVO-UP-YTa"/>
+                <constraint firstItem="VMH-0K-RjB" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="uGt-8q-1Xa"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="segmentedFirstButton" destination="VMH-0K-RjB" id="5gf-b8-Vwb"/>
+                <outlet property="segmentedSecondButton" destination="t7I-0s-M3K" id="tLp-Ak-0nA"/>
+            </connections>
+            <point key="canvasLocation" x="121.73913043478262" y="-145.3125"/>
+        </view>
+    </objects>
+</document>

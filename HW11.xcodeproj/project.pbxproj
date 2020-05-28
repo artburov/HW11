@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		847F25EE24804C6E001FE4AF /* SegmentedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847F25ED24804C6E001FE4AF /* SegmentedButton.swift */; };
+		847F25F024804CB4001FE4AF /* SegmentedButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847F25EF24804CB4001FE4AF /* SegmentedButton.xib */; };
 		84F654CC247C301200E8D4FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F654CB247C301200E8D4FC /* AppDelegate.swift */; };
 		84F654CE247C301200E8D4FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F654CD247C301200E8D4FC /* SceneDelegate.swift */; };
 		84F654D0247C301200E8D4FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F654CF247C301200E8D4FC /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		847F25ED24804C6E001FE4AF /* SegmentedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedButton.swift; sourceTree = "<group>"; };
+		847F25EF24804CB4001FE4AF /* SegmentedButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentedButton.xib; sourceTree = "<group>"; };
 		84F654C8247C301200E8D4FC /* HW11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW11.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F654CB247C301200E8D4FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84F654CD247C301200E8D4FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 				84F654D4247C301400E8D4FC /* Assets.xcassets */,
 				84F654D6247C301400E8D4FC /* LaunchScreen.storyboard */,
 				84F654D9247C301400E8D4FC /* Info.plist */,
+				847F25ED24804C6E001FE4AF /* SegmentedButton.swift */,
+				847F25EF24804CB4001FE4AF /* SegmentedButton.xib */,
 			);
 			path = HW11;
 			sourceTree = "<group>";
@@ -131,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847F25F024804CB4001FE4AF /* SegmentedButton.xib in Resources */,
 				84F654D8247C301400E8D4FC /* LaunchScreen.storyboard in Resources */,
 				84F654D5247C301400E8D4FC /* Assets.xcassets in Resources */,
 				84F654D3247C301200E8D4FC /* Main.storyboard in Resources */,
@@ -144,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847F25EE24804C6E001FE4AF /* SegmentedButton.swift in Sources */,
 				84F654D0247C301200E8D4FC /* ViewController.swift in Sources */,
 				84F654E0247C319500E8D4FC /* ClockView.swift in Sources */,
 				84F6848E247DAA2D001AF5C3 /* myButtons.swift in Sources */,
