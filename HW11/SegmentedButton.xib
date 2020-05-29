@@ -20,6 +20,9 @@
                         <constraint firstAttribute="width" constant="100" id="obK-xY-f9h"/>
                     </constraints>
                     <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="pressedOneSegmentButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="0X3-GT-9Rx"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7I-0s-M3K">
                     <rect key="frame" x="100" y="0.0" width="100" height="40"/>
@@ -28,6 +31,9 @@
                         <constraint firstAttribute="width" constant="100" id="urI-p4-WMO"/>
                     </constraints>
                     <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="pressedSecondSegmentButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="71J-Mq-bKB"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
